@@ -14,7 +14,7 @@ drop table if exists users;
 create table users(
   id int AUTO_INCREMENT PRIMARY KEY,
   username varchar(32),
-  password varchar(32)
+  password varchar(200)
 );
 
 insert into users

@@ -26,6 +26,16 @@ function create() {
 
     if ($username && $password) {
 
+      $username = mysqli_real_escape_string($connection, $username);
+      $password = mysqli_real_escape_string($connection, $password);
+
+      $hashformat = "$2y$10$";
+      // must be at least 22 characters
+      $salt = "ghdyet45378yrhejdn46et";
+      $hash_and_salt = $hashformat . $salt;
+
+      $password = crypt($password, $hash_and_salt);
+
       $query = "INSERT INTO users (username, password) " .
         "VALUES ('$username', '$password')";
 

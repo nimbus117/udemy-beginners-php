@@ -26,6 +26,18 @@
 		Step 4 - echo the variable
 
 	*/
+
+  $hashFormat = "$2y$10$";
+
+  $salt = "qwertghy6583ujh26tfbsk";
+
+  $hashAndSalt = $hashFormat . $salt;
+
+  $string = "test";
+
+  $encryptedString = crypt($string, $hashAndSalt);
+
+  echo $encryptedString;
 	
 	?>
 

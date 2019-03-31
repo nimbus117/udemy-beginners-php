@@ -26,8 +26,25 @@
 
 		Step 3 - Start a session and set it to value, any value you want.
 	*/
+
+  session_start();
+  $_SESSION['userId'] = "blahblahblah";
+
+  $linkTitle = 'Link';
+  if (isset($_GET['src'])) {
+    $linkTitle = $_GET['src'];
+  }
 	
+
+  $name = "myCookie";
+  $value = "someValue";
+  $expire = time() + (60*60*24*7*4);
+  setcookie($name, $value, $expire);
+
+
 	?>
+
+<a href="9.php?src=test"><?php echo $linkTitle ?></a>
 
 
 

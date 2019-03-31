@@ -15,11 +15,11 @@ usort($g,function($a,$b) {
  
 function printElement ($a) {
 	if (is_dir($a)) {
-		return '<a href="'.$a.'">'.$a.'/</a> <a href="?path='. $a.'">show</a>';
+		return '<a target="_blank" href="'.$a.'">'.$a.'/</a> <a href="?path='. $a.'">show</a>';
 	}
 	else
 	{
-		return '<a href="'.$a.'">'.$a.'</a>';
+		return '<a target="_blank" href="'.$a.'">'.$a.'</a>';
 	}
 }
 echo implode("<br>",array_map(function($a) {return printElement($a);},$g));

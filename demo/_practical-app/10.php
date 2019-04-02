@@ -24,10 +24,36 @@
 
 Step 6: Call the method ShowAll
 
-	
-
-		
 	*/
+
+
+class Dog {
+
+  private $name;
+  private $breed;
+  private $colour;
+  private $age;
+
+  /**
+   * @param string $name
+   * @param string $breed
+   * @param string $colour
+   * @param int $age
+   */
+  public function __construct(string $name, string $breed, string $colour, int $age) {
+    $this->name = $name;
+    $this->breed = $breed;
+    $this->colour = $colour;
+    $this->age = $age;
+  }
+
+  public function show(): Dog {
+    return $this;
+  }
+}
+
+$dog1 = new Dog("Bob", "Poodle", "White", 5);
+var_dump($dog1->show());
 	
 	?>
 
